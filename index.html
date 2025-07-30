@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Adicionar Imagens</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Adicionar Imagens ao Site</h1>
+    
+    <!-- Botão para escolher imagem -->
+    <input type="file" id="input-imagem" accept="image/*">
+    
+    <!-- Onde a imagem será exibida -->
+    <div id="preview-container"></div>
+  </div>
+
+  <script>
+    const inputImagem = document.getElementById("input-imagem");
+    const previewContainer = document.getElementById("preview-container");
+
+    inputImagem.addEventListener("change", function () {
+      const arquivo = this.files[0];
+
+      if (arquivo) {
+        const reader = new FileReader();
+
+        reader.addEventListener("load", function () {
+          const img = document.createElement("img");
+          img.src = this.result;
+          img.style.width = "300px";
+          img.style.margin = "10px";
+          img.style.borderRadius = "15px";
+          img.style.boxShadow = "0 4px 10px rgba(0,0,0,0.2)";
+          previewContainer.innerHTML = ""; // Limpa anterior
+          previewContainer.appendChild(img);
+        });
+
+        reader.readAsDataURL(arquivo);
+      }
+    });
+  </script>
+</body>
+</html>
