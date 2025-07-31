@@ -47,3 +47,49 @@
   <source src="musica.mp3" type="audio/mpeg">
   Seu navegador não suporta áudio.
 </audio>
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Player de Música</title>
+  <style>
+    body {
+      background-color: #1c1c1c;
+      color: white;
+      font-family: Arial, sans-serif;
+      text-align: center;
+      padding: 50px;
+    }
+
+    .player-container {
+      background: #292929;
+      padding: 30px;
+      border-radius: 15px;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+      display: inline-block;
+    }
+
+    .player-container h2 {
+      margin-bottom: 20px;
+      color: #0af;
+    }
+
+    audio {
+      width: 100%;
+      max-width: 300px;
+      outline: none;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="player-container">
+    <h2>Minha Música Favorita</h2>
+    <audio controls>
+      <source src="musica.mp3" type="audio/mpeg">
+      Seu navegador não suporta o elemento de áudio.
+    </audio>
+  </div>
+
+</body>
+</html>
